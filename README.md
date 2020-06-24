@@ -11,11 +11,17 @@ Bios Configuration Utility.
 Find Bios Utilty based on System i am using HPBiosUtility to configure Bios.
 
 # Get Bios Configuration Utility From Vendor Website
-Please Download HP Bios Configuration Utility From Below Link
-https://ftp.hp.com/pub/caps-softpaq/cmit/HP_BCU.html
-When You install Downloaded Utility It will Installed at Following Location
-__C:\Program Files (x86)\HP\BIOS Configuration Utility__
+Please Download HP Bios Configuration Utility From Link
 
+```bash
+https://ftp.hp.com/pub/caps-softpaq/cmit/HP_BCU.html
+````
+
+When You install Downloaded Utility It will Installed at Following Location
+
+```bash
+C:\Program Files (x86)\HP\BIOS Configuration Utility\
+````
 You Will find two Files like
 1.	BiosConfigUtility.exe #for 32 bit OS
 2.	BiosConfigUtility64.exe #For 64 bit OS (We use in this scenario)
