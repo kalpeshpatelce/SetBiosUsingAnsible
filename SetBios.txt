@@ -1,0 +1,43 @@
+BIOSConfig 1.0
+;
+;     Originally created by BIOS Configuration Utility
+;     Version: 4.0.26.1
+;     Date="2019/10/11" Time="11:17:15" UTC="6"
+;
+;     Found 99 settings
+;
+UEFI Boot Sources
+	USB Floppy/CD
+	USB Hard Drive
+Legacy Boot Sources
+	USB Floppy/CD
+	Hard Drive
+	Network Controller (Realtek PXE B04 D00)
+Network Boot
+	*Enable
+	Disable
+Virtualization Technology (VTx/VTd)
+	Disable
+	*Enable
+Legacy Support
+	*Enable
+	Disable
+Secure Boot
+	Enable
+	*Disable
+Fast Boot
+	*Enable
+	Disable
+S4/S5 Wake on LAN
+	Disable
+	*Enable
+Remote Wakeup Boot Source
+	Remote Server
+	*Local Hard Drive
+Wake on LAN Power-On Password Policy
+	*Bypass Password
+	Require Password
+After Power Loss
+	Off
+	On
+	*Previous State

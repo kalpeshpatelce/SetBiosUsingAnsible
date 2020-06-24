@@ -1,0 +1,47 @@
+---
+- name: Change Bios of Remote PC
+  hosts: LAB
+  gather_facts: no
+  become_method: runas
+
+  vars:
+    ansible_become_password: password
+
+  tasks:
+  - name: ping
+    win_ping:
+
+  - name: Remove BCU folder if Exist
+    win_shell: rm -r c:\BCU | out-null
+    ignore_errors: yes
+    become: yes
+    become_user: Administrator
+
+  - name: Make BCU Directory
+    win_shell: mkdir c:\BCU
+    ignore_errors: yes
+
+  - name: Copy BiosConfigurationUtility
+    win_shell: wget http://serverip/BiosConfigUtility64.exe -OutFile C:\bcu\BiosConfigUtility64.exe
+
+  - name: Copy config File
+    win_shell: wget http://serverip/BiosConfigUtility64.exe -OutFile C:\bcu\SetBios.txt
+ 
+
+  - name: Configure Bios of Remote PC
+    win_shell: C:\bcu\BiosConfigUtility64.exe /Set:c:\bcu\SetBios.txt
+    ignore_errors: yes
+    become: yes
+    become_user: Administrator
+
+  - name: Remove BCU folder
+    win_shell: rm -r c:\BCU | out-null
+    ignore_errors: yes
+    become: yes
+    become_user: Administrator
+
+
+  - name: Reboot Computer
+    win_shell: shutdown -r -f -t 00
+    become: yes
+    become_user: Administrator
